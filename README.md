@@ -1,6 +1,6 @@
-# Playing Card Classifier using Convolutional Neural Networks (CNNs)
+# Playing Card Classification using Convolutional Neural Networks (CNNs)
 
-This project aims to classify playing cards using deep learning techniques, specifically Convolutional Neural Networks (CNNs). The model is trained on a dataset containing images of various playing cards.
+This project focuses on classifying playing cards by leveraging deep learning, specifically Convolutional Neural Networks (CNNs). The model is trained on a dataset comprising various images of playing cards.
 
 ## Table of Contents
 
@@ -16,83 +16,83 @@ This project aims to classify playing cards using deep learning techniques, spec
 
 ## Introduction
 
-In this project, we develop a CNN-based model to classify playing cards into different categories. The model is trained on a dataset consisting of images of playing cards from various decks and suits. The goal is to accurately identify the type of playing card depicted in a given image.
+This project develops a CNN-based model to classify playing cards into distinct categories. The model is trained on a dataset containing images of playing cards from various suits and decks, aiming to accurately identify the card depicted in a given image.
 
 ## Dataset Overview
 
-The dataset used for training and evaluation contains a diverse collection of playing card images. It includes images of cards from different decks, suits, and ranks. The dataset is preprocessed to ensure consistency in image size and format.
+The dataset consists of a diverse set of images of playing cards, featuring different suits, decks, and ranks. Images are preprocessed to ensure uniformity in size and format.
 
-- Dataset Size: 7794 images
-- Classes: 53 (One class for each type of playing card)
-- Image Size: 224 x 224 pixels (RGB format)
-- Train-Validation-Test Split: 7624 images / 265 images / 265 images
+- Dataset Size: 7,794 images
+- Classes: 53 (representing each card type)
+- Image Dimensions: 224 x 224 pixels in RGB format
+- Train-Validation-Test Split: 7,264 / 265 / 265 images
 
-For more information about the dataset, refer to [this link](https://www.kaggle.com/datasets/gpiosenka/cards-image-datasetclassification).
+More details about the dataset can be found at [this link](https://www.kaggle.com/datasets/gpiosenka/cards-image-datasetclassification).
 
 ## Model Architecture
 
-The model architecture consists of a series of convolutional layers followed by fully connected layers. Here's an overview of the model architecture:
+The architecture includes a series of convolutional layers followed by fully connected layers. Below is a summary of the structure:
 
 ### Convolutional Layers:
 
-- The model begins with two convolutional layers (`conv1` and `conv2`), which extract features from the input images.
-- Each convolutional layer is followed by a Rectified Linear Unit (ReLU) activation function (`relu1` and `relu2`) to introduce non-linearity to the model.
-- Max-pooling layers (`pool1` and `pool2`) are applied after each convolutional layer to downsample the feature maps and reduce spatial dimensions.
+- Two convolutional layers (`conv1` and `conv2`) extract features from the input images.
+- ReLU activation functions (`relu1` and `relu2`) introduce non-linearity.
+- Max-pooling layers (`pool1` and `pool2`) reduce the spatial dimensions and downsample feature maps.
 
 ### Fully Connected Layers:
 
-- Following the convolutional layers, the feature maps are flattened and passed through two fully connected layers (`fc1` and `fc2`).
-- The first fully connected layer (`fc1`) has 512 neurons and applies a ReLU activation function (`relu3`).
-- The final fully connected layer (`fc2`) outputs logits for each class without applying an activation function.
+- After the convolutional layers, the feature maps are flattened and passed through two fully connected layers (`fc1` and `fc2`).
+- The first fully connected layer (`fc1`) contains 512 neurons with ReLU activation (`relu3`).
+- The final fully connected layer (`fc2`) outputs logits for each class.
 
 ### Input and Output:
 
-- Input images are assumed to have three channels (RGB).
-- The output layer has `num_classes` neurons, where `num_classes` represents the number of classes for classification (default: 53).
+- The model accepts RGB input images.
+- The output layer has `num_classes` neurons, where `num_classes` equals 53 (representing each playing card).
 
 ### Forward Pass:
 
-- During the forward pass, input images (`x`) undergo convolutional operations, followed by activation functions and max-pooling.
-- The resulting feature maps are flattened and passed through fully connected layers to generate class logits.
+- Input images (`x`) undergo convolutional operations, followed by ReLU activation and max-pooling.
+- The resulting feature maps are flattened and passed through the fully connected layers, yielding class logits.
 
-Overall, the `CardClassifierCNN` architecture employs convolutional and fully connected layers to learn hierarchical representations of playing card images and make predictions based on these representations.
+The `CardClassifierCNN` model leverages convolutional and fully connected layers to learn and predict playing card categories.
 
-For more details, refer to the Model Architecture section in the code.
+For a detailed explanation, refer to the Model Architecture section in the code.
 
 ## Training Process
 
-The model is trained using the Adam optimizer with the Cross-Entropy Loss function. Training is performed over multiple epochs, with early stopping implemented to prevent overfitting. Training progress and performance metrics are monitored using validation data.
+The model is trained using the Adam optimizer and Cross-Entropy Loss function over multiple epochs. Early stopping is implemented to avoid overfitting, with performance metrics tracked on validation data.
 
-For detailed information about the training process, refer to the Training Process section in the code.
+Refer to the Training Process section in the code for more information.
 
 ## Model Evaluation
 
-After training, the model is evaluated on a separate test set to assess its performance. The evaluation includes metrics such as accuracy, precision, recall, and F1-score. Additionally, qualitative assessment is performed by visualizing predictions on sample test images.
+Post-training, the model is evaluated using a separate test set. Performance metrics such as accuracy, precision, recall, and F1-score are calculated. Additionally, predictions on sample test images are visualized for qualitative analysis.
 
-For more details, refer to the Model Evaluation section in the code.
+For more details, see the Model Evaluation section in the code.
 
 ## Usage
 
-To use the model for inference, follow these steps:
+To run the model for inference, follow these steps:
 
-1. Install the required dependencies (specified in the Dependencies section).
-2. Clone the repository to your local machine.
-3. Download the dataset and place it in the appropriate directory.
-4. Run the provided scripts or execute the code in your preferred environment.
+1. Install the required dependencies listed in the Dependencies section.
+2. Clone the repository.
+3. Download the dataset and place it in the correct directory.
+4. Run the provided scripts or execute the code in your development environment.
 
 ## Dependencies
 
-Ensure you have the following dependencies installed:
+Ensure the following dependencies are installed:
 
-- Python (version 3.9)
-- PyTorch (version 2.1.2)
+- Python (v3.9)
+- PyTorch (v2.1.2)
 - Matplotlib
-- NumPy (version 1.26.3)
+- NumPy (v1.26.3)
 - scikit-learn
 
 ## Contributing
 
-Contributions to this project are welcome. Feel free to open issues, submit pull requests, or provide feedback on the existing implementation.
+Contributions are welcome! Feel free to open issues, submit pull requests, or provide feedback on the current implementation.
 
 ## References
 
